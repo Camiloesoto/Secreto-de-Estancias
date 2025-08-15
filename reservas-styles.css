@@ -27,64 +27,80 @@
     --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Header específico para la página de reservas */
-.header {
-    position: relative;
+/* Header completamente independiente para la página de reservas */
+.header-reservas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 1000;
+    background: rgba(245, 241, 231, 0.95);
+    backdrop-filter: blur(30px) saturate(200%);
+    -webkit-backdrop-filter: blur(30px) saturate(200%);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    border-bottom: 1px solid rgba(107, 124, 50, 0.1);
 }
 
-.nav {
-    background: rgba(245, 241, 231, 0.95) !important;
-    backdrop-filter: blur(30px) saturate(200%) !important;
-    -webkit-backdrop-filter: blur(30px) saturate(200%) !important;
-    box-shadow: var(--shadow-medium) !important;
-    position: relative;
-    z-index: 1001;
+.nav-reservas {
+    padding: 1rem 0;
 }
 
-.nav-container {
+.nav-reservas-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem 2rem;
+    padding: 0 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.nav-logo h2 {
-    color: var(--verde-oliva) !important;
+.nav-reservas-logo h2 {
+    color: var(--verde-oliva);
     font-size: 1.5rem;
     margin: 0;
-    text-decoration: none !important;
+    font-weight: 600;
+    letter-spacing: -0.01em;
 }
 
-.nav-logo a {
-    text-decoration: none !important;
+.nav-reservas-logo a {
+    text-decoration: none;
     color: inherit;
+    transition: color var(--transition-medium);
 }
 
-.nav-menu {
+.nav-reservas-logo a:hover {
+    color: var(--verde-oscuro);
+}
+
+.nav-reservas-menu {
     display: flex;
     list-style: none;
     gap: 2rem;
+    margin: 0;
+    padding: 0;
 }
 
-.nav-link {
-    text-decoration: none !important;
-    color: var(--verde-oscuro) !important;
+.nav-reservas-menu li {
+    margin: 0;
+}
+
+.nav-reservas-menu a {
+    text-decoration: none;
+    color: var(--verde-oscuro);
     font-weight: 500;
     transition: color var(--transition-medium);
     position: relative;
+    padding: 0.5rem 0;
 }
 
-.nav-link:hover {
-    color: var(--verde-oliva) !important;
+.nav-reservas-menu a:hover {
+    color: var(--verde-oliva);
 }
 
-.nav-link::after {
+.nav-reservas-menu a::after {
     content: '';
     position: absolute;
-    bottom: -5px;
+    bottom: 0;
     left: 0;
     width: 0;
     height: 2px;
@@ -92,59 +108,94 @@
     transition: width var(--transition-medium);
 }
 
-.nav-link:hover::after {
+.nav-reservas-menu a:hover::after {
     width: 100%;
 }
 
-.nav-cta {
-    background: var(--verde-oliva) !important;
-    color: var(--blanco) !important;
+.nav-reservas-cta {
+    background: var(--verde-oliva);
+    color: var(--blanco);
     padding: 0.8rem 1.5rem;
     border-radius: 25px;
-    text-decoration: none !important;
+    text-decoration: none;
     font-weight: 600;
     transition: all var(--transition-medium);
 }
 
-.nav-cta:hover {
-    background: var(--verde-oscuro) !important;
+.nav-reservas-cta:hover {
+    background: var(--verde-oscuro);
     transform: translateY(-2px);
-    box-shadow: var(--shadow-medium);
+    box-shadow: 0 4px 15px rgba(107, 124, 50, 0.3);
 }
 
-/* Toggle móvil */
-.nav-toggle {
+.nav-reservas-cta::after {
+    display: none;
+}
+
+/* Toggle móvil para header de reservas */
+.nav-reservas-toggle {
     display: none;
     flex-direction: column;
     cursor: pointer;
     gap: 4px;
 }
 
-.nav-toggle span {
+.nav-reservas-toggle span {
     width: 25px;
     height: 3px;
     background: var(--verde-oliva);
     transition: var(--transition-medium);
 }
 
-.nav-toggle.active span:nth-child(1) {
+.nav-reservas-toggle.active span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
 }
 
-.nav-toggle.active span:nth-child(2) {
+.nav-reservas-toggle.active span:nth-child(2) {
     opacity: 0;
 }
 
-.nav-toggle.active span:nth-child(3) {
+.nav-reservas-toggle.active span:nth-child(3) {
     transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Responsive para móvil del header de reservas */
+@media (max-width: 768px) {
+    .nav-reservas-toggle {
+        display: flex;
+    }
+    
+    .nav-reservas-menu {
+        position: fixed;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(245, 241, 231, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1.5rem;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all var(--transition-medium);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    }
+    
+    .nav-reservas-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
 }
 
 /* Hero de Reservas - Sobrescribir estilos de la página principal */
 .hero-reservas {
+    margin-top: 80px;
     background: linear-gradient(135deg, rgba(26, 46, 26, 0.9), rgba(107, 124, 50, 0.8)), 
                 url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover;
     min-height: 60vh;
-    height: auto !important; /* Sobrescribir height: 100vh */
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -152,8 +203,6 @@
     color: var(--blanco);
     position: relative;
     overflow: hidden;
-    margin: 0;
-    padding: 0;
 }
 
 .hero-reservas::before {

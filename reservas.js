@@ -3,11 +3,19 @@
 // ========================================
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Inicializar el calendario
+    console.log('Página de reservas cargada');
+    
+    // Inicializar calendario
     initializeCalendar();
     
-    // Inicializar el formulario
+    // Inicializar formulario
     initializeForm();
+    
+    // Inicializar navegación móvil
+    initializeMobileNav();
+    
+    // Inicializar scroll to top
+    initializeScrollToTop();
     
     // Configurar eventos
     setupEventListeners();
@@ -413,6 +421,31 @@ function submitReservation() {
         });
         
     }, 2000);
+}
+
+// ========================================
+// NAVEGACIÓN MÓVIL
+// ========================================
+
+function initializeMobileNav() {
+    const toggle = document.querySelector('.nav-reservas-toggle');
+    const menu = document.querySelector('.nav-reservas-menu');
+    
+    if (toggle && menu) {
+        toggle.addEventListener('click', function() {
+            toggle.classList.toggle('active');
+            menu.classList.toggle('active');
+        });
+        
+        // Cerrar menú al hacer click en un enlace
+        const menuLinks = menu.querySelectorAll('a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                toggle.classList.remove('active');
+                menu.classList.remove('active');
+            });
+        });
+    }
 }
 
 // ========================================
