@@ -203,19 +203,12 @@
                         
                         <div class="form-group">
                             <label for="comentarios">Comentarios Adicionales</label>
-                            <textarea id="comentarios" name="comentarios" rows="3" placeholder="¿Tienes alguna pregunta específica o requisito especial?"></textarea>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="checkbox-item">
-                                <input type="checkbox" name="acepto" required>
-                                <span>Acepto recibir información sobre El Secreto de Estancias</span>
-                            </label>
+                            <textarea id="comentarios" name="comentarios" rows="3" placeholder="Cuéntanos más sobre tu interés..."></textarea>
                         </div>
                         
                         <button type="submit" class="btn btn-primary btn-full">
                             <span class="btn-text">Confirmar Reserva</span>
-                            <span class="btn-loading" style="display: none;">Procesando...</span>
+                            <span class="btn-loading">Enviando...</span>
                         </button>
                     </form>
                 </div>
@@ -275,11 +268,12 @@
                 <div class="footer-section">
                     <h3>El Secreto de Estancias</h3>
                     <p>Vive la naturaleza con libertad y confort</p>
+                    <p class="copyright">© 2025 El Secreto de Estancias. Todos los derechos reservados.</p>
                 </div>
                 <div class="footer-section">
                     <h4>Contacto</h4>
-                    <p>📧 ventas@elsecretodeestancias.com</p>
-                    <p>📱 +57 313 784 8155</p>
+                    <p><a href="mailto:ventas@elsecretodeestancias.com">ventas@elsecretodeestancias.com</a></p>
+                    <p><a href="tel:+573137848155">+57 313 784 8155</a></p>
                 </div>
                 <div class="footer-section">
                     <h4>Enlaces</h4>
@@ -291,9 +285,11 @@
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 El Secreto de Estancias. Todos los derechos reservados.</p>
-            </div>
+        </div>
+        <div class="scroll-to-top" onclick="scrollToTop()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+            </svg>
         </div>
     </footer>
 
