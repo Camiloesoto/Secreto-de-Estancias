@@ -23,7 +23,7 @@ const CHAT_CONFIG = {
     
     // Custom WhatsApp Chat
     whatsapp: {
-        enabled: true,
+        enabled: false, // DESHABILITADO - Widget feo
         phone: '573137848155',
         message: 'Hola! Me interesa conocer más sobre los lotes en El Secreto de Estancias.',
         buttonText: '💬 Chat en vivo',

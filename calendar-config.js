@@ -18,7 +18,7 @@ const CALENDAR_CONFIG = {
     
     // Custom WhatsApp Scheduling
     whatsapp: {
-        enabled: true,
+        enabled: false, // DESHABILITADO - Widget feo
         phone: '573137848155',
         message: 'Hola! Me gustaría agendar una visita para conocer los lotes en El Secreto de Estancias.',
         buttonText: '📅 Agendar visita',
