@@ -20,7 +20,19 @@ document.addEventListener('DOMContentLoaded', function() {
 function initializeCalendar() {
     const calendarEl = document.getElementById('calendar');
     
-    if (!calendarEl) return;
+    if (!calendarEl) {
+        console.error('Elemento del calendario no encontrado');
+        return;
+    }
+    
+    // Mostrar mensaje de carga
+    calendarEl.innerHTML = '<div style="text-align: center; padding: 2rem; color: var(--color-secondary);">Cargando calendario...</div>';
+    
+    // Verificar que FullCalendar esté disponible
+    if (typeof FullCalendar === 'undefined') {
+        calendarEl.innerHTML = '<div style="text-align: center; padding: 2rem; color: #f44336;">Error: FullCalendar no está disponible. Recarga la página.</div>';
+        return;
+    }
     
     // Configuración del calendario
     const calendar = new FullCalendar.Calendar(calendarEl, {
@@ -67,7 +79,14 @@ function initializeCalendar() {
     });
     
     // Renderizar el calendario
-    calendar.render();
+    try {
+        calendar.render();
+        console.log('Calendario renderizado exitosamente');
+    } catch (error) {
+        console.error('Error al renderizar el calendario:', error);
+        calendarEl.innerHTML = '<div style="text-align: center; padding: 2rem; color: #f44336;">Error al cargar el calendario. Recarga la página.</div>';
+        return;
+    }
     
     // Guardar referencia global
     window.reservationCalendar = calendar;
@@ -427,56 +446,47 @@ function setupEventListeners() {
     });
 }
 
-// Mostrar notificación
-function showNotification(message, type = 'info') {
+// ========================================
+// FUNCIONES UTILITARIAS
+// ========================================
+
+// Función para scroll suave al inicio
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+// Función para mostrar notificaciones
+function showNotification(message, type = 'success') {
     // Crear elemento de notificación
     const notification = document.createElement('div');
     notification.className = `notification notification-${type}`;
     notification.innerHTML = `
         <div class="notification-content">
             <span class="notification-message">${message}</span>
-            <button class="notification-close">&times;</button>
+            <button class="notification-close" onclick="this.parentElement.parentElement.remove()">×</button>
         </div>
     `;
     
-    // Agregar estilos
-    notification.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: ${type === 'success' ? '#4CAF50' : type === 'error' ? '#f44336' : '#2196F3'};
-        color: white;
-        padding: 1rem 1.5rem;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        z-index: 10000;
-        max-width: 400px;
-        animation: slideInRight 0.3s ease;
-    `;
-    
-    // Agregar al DOM
+    // Agregar al body
     document.body.appendChild(notification);
     
-    // Configurar cierre automático
+    // Mostrar con animación
     setTimeout(() => {
-        notification.style.animation = 'slideOutRight 0.3s ease';
+        notification.classList.add('show');
+    }, 100);
+    
+    // Auto-ocultar después de 5 segundos
+    setTimeout(() => {
+        notification.classList.remove('show');
         setTimeout(() => {
-            if (notification.parentNode) {
-                notification.parentNode.removeChild(notification);
+            if (notification.parentElement) {
+                notification.remove();
             }
         }, 300);
     }, 5000);
-    
-    // Cierre manual
-    const closeBtn = notification.querySelector('.notification-close');
-    closeBtn.addEventListener('click', () => {
-        notification.style.animation = 'slideOutRight 0.3s ease';
-        setTimeout(() => {
-            if (notification.parentNode) {
-                notification.parentNode.removeChild(notification);
-            }
-        }, 300);
-    });
 }
 
 // Formatear fecha
