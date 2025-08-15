@@ -1,0 +1,118 @@
+<!-- Ejemplo de integración de Google Maps -->
+<!-- Reemplaza el div .placeholder-map en la sección de ubicación con este código -->
+
+<!-- Opción 1: Google Maps Embed (Recomendado para sitios simples) -->
+<iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.1234567890123!2d-75.12345678901234!3d6.123456789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e44a1234567890%3A0x1234567890abcdef!2sSan+Jer%C3%B3nimo%2C+Antioquia!5e0!3m2!1ses!2sco!4v1234567890123"
+    width="100%" 
+    height="400" 
+    style="border:0; border-radius: 15px;" 
+    allowfullscreen="" 
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+<!-- Opción 2: Google Maps JavaScript API (Para más funcionalidades) -->
+<!-- 
+<div id="map" style="width: 100%; height: 400px; border-radius: 15px;"></div>
+
+<script>
+function initMap() {
+    const sanJeronimo = { lat: 6.123456789012345, lng: -75.12345678901234 };
+    const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 12,
+        center: sanJeronimo,
+        styles: [
+            // Estilos personalizados para que coincidan con tu diseño
+            {
+                "featureType": "all",
+                "elementType": "geometry",
+                "stylers": [{"color": "#f5f1e7"}]
+            },
+            {
+                "featureType": "road",
+                "elementType": "geometry",
+                "stylers": [{"color": "#edeae6"}]
+            }
+        ]
+    });
+    
+    // Marcador del proyecto
+    new google.maps.Marker({
+        position: sanJeronimo,
+        map: map,
+        title: "El Secreto de Estancias",
+        icon: {
+            url: "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(`
+                <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="20" cy="20" r="18" fill="#C7A76B" stroke="#1E3932" stroke-width="2"/>
+                    <text x="20" y="25" text-anchor="middle" fill="#FFFFFF" font-family="Arial" font-size="12" font-weight="bold">ES</text>
+                </svg>
+            `),
+            scaledSize: new google.maps.Size(40, 40)
+        }
+    });
+}
+
+// Cargar la API de Google Maps
+function loadGoogleMapsAPI() {
+    const script = document.createElement('script');
+    script.src = 'https://maps.googleapis.com/maps/api/js?key=TU_API_KEY&callback=initMap';
+    script.async = true;
+    script.defer = true;
+    document.head.appendChild(script);
+}
+
+// Cargar cuando la página esté lista
+document.addEventListener('DOMContentLoaded', loadGoogleMapsAPI);
+</script>
+-->
+
+<!-- Opción 3: Mapbox (Alternativa gratuita) -->
+<!-- 
+<div id="map" style="width: 100%; height: 400px; border-radius: 15px;"></div>
+
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet" />
+
+<script>
+mapboxgl.accessToken = 'TU_MAPBOX_ACCESS_TOKEN';
+const map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/outdoors-v11',
+    center: [-75.12345678901234, 6.123456789012345],
+    zoom: 12
+});
+
+// Marcador personalizado
+const marker = new mapboxgl.Marker({
+    color: '#C7A76B',
+    scale: 1.2
+})
+.setLngLat([-75.12345678901234, 6.123456789012345])
+.setPopup(new mapboxgl.Popup().setHTML('<h3>El Secreto de Estancias</h3><p>San Jerónimo, Antioquia</p>'))
+.addTo(map);
+</script>
+-->
+
+<!-- Instrucciones de configuración:
+1. Para Google Maps Embed:
+   - Ve a Google Maps
+   - Busca "San Jerónimo, Antioquia"
+   - Haz clic en "Compartir" > "Insertar mapa"
+   - Copia el código iframe y reemplaza la URL
+
+2. Para Google Maps JavaScript API:
+   - Obtén una API key en https://developers.google.com/maps
+   - Reemplaza "TU_API_KEY" con tu clave real
+   - Ajusta las coordenadas lat/lng según la ubicación exacta
+
+3. Para Mapbox:
+   - Regístrate en https://mapbox.com
+   - Obtén tu access token
+   - Reemplaza "TU_MAPBOX_ACCESS_TOKEN" con tu token real
+   - Ajusta las coordenadas según sea necesario
+
+Nota: Las coordenadas en este ejemplo son ficticias. 
+Debes usar las coordenadas reales de tu proyecto.
+-->
