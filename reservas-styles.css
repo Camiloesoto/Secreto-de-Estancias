@@ -1,0 +1,425 @@
+/* ========================================
+   ESTILOS ESPECÍFICOS PARA RESERVAS
+   ======================================== */
+
+/* Hero de Reservas */
+.hero-reservas {
+    background: linear-gradient(135deg, rgba(30, 57, 50, 0.9), rgba(46, 94, 78, 0.8)), 
+                url('https://via.placeholder.com/1920x1080/6B7C32/FFFFFF?text=Reserva+Tu+Visita') center/cover;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-reservas .hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-reservas .hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+.hero-features {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero-features .feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.feature-icon {
+    font-size: 2rem;
+    background: rgba(255,255,255,0.2);
+    padding: 1rem;
+    border-radius: 50%;
+    backdrop-filter: blur(10px);
+}
+
+/* Sección de Reservas */
+.reservas-section {
+    padding: 5rem 0;
+    background: var(--color-background);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+.section-header p {
+    font-size: 1.1rem;
+    color: var(--color-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Contenedor de Reservas */
+.reservas-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Calendario */
+.calendar-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+#calendar {
+    margin-bottom: 1.5rem;
+}
+
+/* Personalización del Calendario FullCalendar */
+.fc {
+    font-family: 'Inter', sans-serif;
+}
+
+.fc-toolbar-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem !important;
+    color: var(--color-primary);
+}
+
+.fc-button-primary {
+    background-color: var(--color-primary) !important;
+    border-color: var(--color-primary) !important;
+}
+
+.fc-button-primary:hover {
+    background-color: var(--color-secondary) !important;
+    border-color: var(--color-secondary) !important;
+}
+
+.fc-daygrid-day.fc-day-today {
+    background-color: rgba(199, 167, 107, 0.1) !important;
+}
+
+.fc-daygrid-day.fc-day-past {
+    opacity: 0.6;
+}
+
+.fc-daygrid-day.fc-day-future {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.fc-daygrid-day.fc-day-future:hover {
+    background-color: rgba(46, 94, 78, 0.1);
+    transform: scale(1.02);
+}
+
+/* Leyenda del Calendario */
+.calendar-legend {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--color-secondary);
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+}
+
+.legend-color.available {
+    background-color: #4CAF50;
+}
+
+.legend-color.booked {
+    background-color: #f44336;
+}
+
+.legend-color.today {
+    background-color: var(--color-accent);
+}
+
+/* Formulario de Reserva */
+.reserva-form-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.form-header h3 {
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.form-header p {
+    color: var(--color-secondary);
+}
+
+.reserva-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--color-primary);
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 0.8rem 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(199, 167, 107, 0.1);
+}
+
+.form-group input[readonly] {
+    background-color: #f8f9fa;
+    color: var(--color-secondary);
+}
+
+/* Checkboxes de Lotes */
+.lotes-checkboxes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.checkbox-item:hover {
+    background-color: rgba(199, 167, 107, 0.1);
+}
+
+.checkbox-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--color-accent);
+}
+
+/* Botón de Envío */
+.btn-full {
+    width: 100%;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+.btn-loading {
+    display: none;
+}
+
+.btn:disabled .btn-text {
+    display: none;
+}
+
+.btn:disabled .btn-loading {
+    display: inline;
+}
+
+/* Información de Visita */
+.info-visita {
+    padding: 4rem 0;
+    background: white;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.info-card {
+    text-align: center;
+    padding: 2rem 1rem;
+    border-radius: 15px;
+    background: var(--color-background);
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+}
+
+.info-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.info-card h4 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.info-card p {
+    color: var(--color-secondary);
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .reservas-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+    
+    .hero-reservas .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-features {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .calendar-container,
+    .reserva-form-container {
+        padding: 1.5rem;
+    }
+    
+    .lotes-checkboxes {
+        grid-template-columns: 1fr;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-reservas .hero-title {
+        font-size: 2rem;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+    }
+    
+    .calendar-container,
+    .reserva-form-container {
+        padding: 1rem;
+    }
+    
+    .fc-toolbar {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/* Estados del Formulario */
+.form-group.error input,
+.form-group.error select,
+.form-group.error textarea {
+    border-color: #f44336;
+}
+
+.form-group.error .error-message {
+    color: #f44336;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+}
+
+.form-group.success input,
+.form-group.success select,
+.form-group.success textarea {
+    border-color: #4CAF50;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reservas-container > * {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.reservas-container > *:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+/* Estilos para fechas seleccionadas */
+.fc-daygrid-day.fc-day-selected {
+    background-color: var(--color-accent) !important;
+    color: white !important;
+}
+
+.fc-daygrid-day.fc-day-selected .fc-daygrid-day-number {
+    color: white !important;
+    font-weight: bold;
+}

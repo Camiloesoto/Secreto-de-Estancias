@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservar Visita - El Secreto de Estancias</title>
+    <meta name="description" content="Reserva tu visita a El Secreto de Estancias. Conoce nuestros lotes campestres en San Jerónimo, Antioquia.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FullCalendar CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.css" rel="stylesheet">
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="reservas-styles.css">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Reservar Visita - El Secreto de Estancias">
+    <meta property="og:description" content="Reserva tu visita a nuestros lotes campestres en San Jerónimo, Antioquia.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://camiloesoto.github.io/Secreto-de-Estancias/reservas.html">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.html">
+                        <h2>El Secreto de Estancias</h2>
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#ubicacion">Ubicación</a></li>
+                    <li><a href="index.html#lotes">Lotes</a></li>
+                    <li><a href="index.html#galeria">Galería</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                    <li><a href="reservas.html" class="nav-cta">Reservar Visita</a></li>
+                </ul>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero hero-reservas">
+        <div class="hero-content">
+            <h1 class="hero-title">Reserva tu Visita</h1>
+            <p class="hero-subtitle">Conoce en persona nuestros lotes campestres y descubre tu lugar ideal</p>
+            <div class="hero-features">
+                <div class="feature">
+                    <span class="feature-icon">🗓️</span>
+                    <span>Reserva en línea</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">📍</span>
+                    <span>Visita guiada</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🎯</span>
+                    <span>Sin compromiso</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservas Section -->
+    <section class="reservas-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Selecciona tu Fecha Preferida</h2>
+                <p>Elige el día y horario que mejor te convenga para visitar El Secreto de Estancias</p>
+            </div>
+
+            <div class="reservas-container">
+                <!-- Calendario -->
+                <div class="calendar-container">
+                    <div id="calendar"></div>
+                    <div class="calendar-legend">
+                        <div class="legend-item">
+                            <span class="legend-color available"></span>
+                            <span>Disponible</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color booked"></span>
+                            <span>Reservado</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color today"></span>
+                            <span>Hoy</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulario de Reserva -->
+                <div class="reserva-form-container">
+                    <div class="form-header">
+                        <h3>Completa tu Reserva</h3>
+                        <p>Llena los datos para confirmar tu visita</p>
+                    </div>
+                    
+                    <form id="reservaForm" class="reserva-form">
+                        <div class="form-group">
+                            <label for="fecha">Fecha Seleccionada</label>
+                            <input type="text" id="fecha" name="fecha" readonly required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="horario">Horario Preferido</label>
+                            <select id="horario" name="horario" required>
+                                <option value="">Selecciona un horario</option>
+                                <option value="9:00">9:00 AM - 10:00 AM</option>
+                                <option value="10:00">10:00 AM - 11:00 AM</option>
+                                <option value="11:00">11:00 AM - 12:00 PM</option>
+                                <option value="14:00">2:00 PM - 3:00 PM</option>
+                                <option value="15:00">3:00 PM - 4:00 PM</option>
+                                <option value="16:00">4:00 PM - 5:00 PM</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="nombre">Nombre Completo *</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="telefono">Teléfono *</label>
+                            <input type="tel" id="telefono" name="telefono" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="personas">Número de Personas</label>
+                            <select id="personas" name="personas">
+                                <option value="1">1 persona</option>
+                                <option value="2">2 personas</option>
+                                <option value="3">3 personas</option>
+                                <option value="4">4 personas</option>
+                                <option value="5+">5+ personas</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="interes">Tipo de Interés</label>
+                            <select id="interes" name="interes">
+                                <option value="compra">Compra de lote</option>
+                                <option value="renta">Renta</option>
+                                <option value="conocer">Solo conocer</option>
+                                <option value="inversion">Inversión</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="lotes">Lotes de Interés</label>
+                            <div class="lotes-checkboxes">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="lotes" value="terraza">
+                                    <span>Terraza</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="lotes" value="ondulado">
+                                    <span>Ondulado</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="lotes" value="playa">
+                                    <span>Playa</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="lotes" value="todos">
+                                    <span>Todos</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="comentarios">Comentarios Adicionales</label>
+                            <textarea id="comentarios" name="comentarios" rows="3" placeholder="¿Tienes alguna pregunta específica o requisito especial?"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="acepto" required>
+                                <span>Acepto recibir información sobre El Secreto de Estancias</span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <span class="btn-text">Confirmar Reserva</span>
+                            <span class="btn-loading" style="display: none;">Procesando...</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Información de Visita -->
+    <section class="info-visita">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon">📍</div>
+                    <h4>Ubicación</h4>
+                    <p>San Jerónimo, Antioquia<br>45 minutos de Medellín</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">⏰</div>
+                    <h4>Duración</h4>
+                    <p>Visita guiada de 1 hora<br>+ tiempo para preguntas</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">🚗</div>
+                    <h4>Transporte</h4>
+                    <p>Vehículo propio recomendado<br>Ruta pavimentada</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">🎯</div>
+                    <h4>Sin Compromiso</h4>
+                    <p>Visita informativa<br>Sin presión de venta</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>El Secreto de Estancias</h3>
+                    <p>Vive la naturaleza con libertad y confort</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>📧 ventas@elsecretodeestancias.com</p>
+                    <p>📱 +57 313 784 8155</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="index.html#ubicacion">Ubicación</a></li>
+                        <li><a href="index.html#lotes">Lotes</a></li>
+                        <li><a href="reservas.html">Reservar Visita</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 El Secreto de Estancias. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
+    <script src="script.js"></script>
+    <script src="reservas.js"></script>
+</body>
+</html>
