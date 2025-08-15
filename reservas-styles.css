@@ -52,6 +52,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 2rem;
+}
+
+.nav-reservas-logo {
+    flex-shrink: 0;
 }
 
 .nav-reservas-logo h2 {
@@ -78,6 +83,8 @@
     gap: 2rem;
     margin: 0;
     padding: 0;
+    flex: 1;
+    justify-content: center;
 }
 
 .nav-reservas-menu li {
@@ -113,19 +120,41 @@
 }
 
 .nav-reservas-cta {
-    background: var(--verde-oliva);
+    flex-shrink: 0;
+    background: linear-gradient(135deg, var(--verde-oliva), var(--verde-oscuro));
     color: var(--blanco);
     padding: 0.8rem 1.5rem;
     border-radius: 25px;
     text-decoration: none;
     font-weight: 600;
     transition: all var(--transition-medium);
+    box-shadow: 0 4px 15px rgba(107, 124, 50, 0.2);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.nav-reservas-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
 }
 
 .nav-reservas-cta:hover {
-    background: var(--verde-oscuro);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(107, 124, 50, 0.3);
+    background: linear-gradient(135deg, var(--verde-oscuro), var(--verde-oliva));
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(107, 124, 50, 0.4);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.nav-reservas-cta:hover::before {
+    left: 100%;
 }
 
 .nav-reservas-cta::after {
@@ -161,6 +190,15 @@
 
 /* Responsive para móvil del header de reservas */
 @media (max-width: 768px) {
+    .nav-reservas-container {
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+    
+    .nav-reservas-menu {
+        gap: 1rem;
+    }
+    
     .nav-reservas-toggle {
         display: flex;
     }
@@ -180,12 +218,29 @@
         visibility: hidden;
         transition: all var(--transition-medium);
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+        justify-content: flex-start;
     }
     
     .nav-reservas-menu.active {
         transform: translateY(0);
         opacity: 1;
         visibility: visible;
+    }
+    
+    .nav-reservas-cta {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-reservas-logo h2 {
+        font-size: 1.2rem;
+    }
+    
+    .nav-reservas-cta {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
     }
 }
 
