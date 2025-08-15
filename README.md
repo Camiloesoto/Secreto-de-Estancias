@@ -2,6 +2,8 @@
 
 Una landing page premium y elegante para la venta de lotes campestres en San Jerónimo, Antioquia. Diseñada con un enfoque de "lujo natural" que transmite confianza y exclusividad.
 
+**🚀 Despliegue automático configurado con GitHub Actions**
+
 ## 🎯 Características Principales
 
 - **Diseño Responsive**: Optimizado para desktop, tablet y móvil
