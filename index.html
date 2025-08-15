@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Secreto de Estancias | Lotes campestres en San Jerónimo</title>
+    <meta name="description" content="Lotes exclusivos en meseta con vistas únicas, doble acceso vial y libertad de diseño (sin P.H.). Dos derechos de agua, explanación y grama macana incluidos. Agenda tu visita.">
+    <meta name="keywords" content="lotes San Jerónimo, parcelación Antioquia, lotes campestres, segunda vivienda Medellín, inversión rural, libertad sin PH">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="El Secreto de Estancias | Lotes campestres en San Jerónimo">
+    <meta property="og:description" content="Lotes exclusivos en meseta con vistas únicas, doble acceso vial y libertad de diseño (sin P.H.). Agenda tu visita.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://elsecretodeestancias.com">
+    <meta property="og:image" content="https://elsecretodeestancias.com/og-image.jpg">
+    <meta property="og:site_name" content="El Secreto de Estancias">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="El Secreto de Estancias | Lotes campestres en San Jerónimo">
+    <meta name="twitter:description" content="Lotes exclusivos en meseta con vistas únicas, doble acceso vial y libertad de diseño (sin P.H.). Agenda tu visita.">
+    <meta name="twitter:image" content="https://elsecretodeestancias.com/og-image.jpg">
+    
+    <!-- Additional SEO -->
+    <meta name="author" content="El Secreto de Estancias">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Spanish">
+    <meta name="geo.region" content="CO-ANT">
+    <meta name="geo.placename" content="San Jerónimo, Antioquia">
+    <meta name="geo.position" content="6.4431;-75.7281">
+    <meta name="ICBM" content="6.4431, -75.7281">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#6B7C32">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Estancias">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(function(registration) {
+                        console.log('✅ Service Worker registrado:', registration.scope);
+                    })
+                    .catch(function(error) {
+                        console.error('❌ Error registrando Service Worker:', error);
+                    });
+            });
+        }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>El Secreto de Estancias</h2>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                <li><a href="#ubicacion" class="nav-link">Ubicación</a></li>
+                <li><a href="#lotes" class="nav-link">Lotes</a></li>
+                <li><a href="#caracteristicas" class="nav-link">Características</a></li>
+                <li><a href="#galeria" class="nav-link">Galería</a></li>
+                <li><a href="#reservas" class="nav-link">Reservas</a></li>
+                <li><a href="#blog" class="nav-link">Blog</a></li>
+                <li><a href="#crm" class="nav-link">CRM</a></li>
+                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">El Secreto de Estancias</h1>
+            <p class="hero-subtitle">Vive la naturaleza con libertad y confort</p>
+            <p class="hero-copy">Un proyecto exclusivo en San Jerónimo, sobre una meseta única, con vistas memorables y libertad de diseño.</p>
+            <div class="hero-cta">
+                <a href="#contacto" class="btn btn-primary">Agendar visita</a>
+                <a href="#contacto" class="btn btn-secondary">Ver disponibilidad</a>
+            </div>
+            <div class="hero-trust">
+                <span class="trust-chip">Doble acceso vial</span>
+                <span class="trust-chip">Altitud 1.000 m s.n.m.</span>
+                <span class="trust-chip">Parcelación abierta (sin P.H.)</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bienvenida Section -->
+    <section class="bienvenida">
+        <div class="container">
+            <div class="section-content">
+                <div class="text-content" data-reveal="left">
+                    <h2>Un refugio de lujo natural</h2>
+                    <p>En lo alto de San Jerónimo, nace un lugar pensado para quienes buscan amplitud, privacidad y naturaleza. El Secreto de Estancias ofrece lotes generosos, vistas únicas y la libertad de crear un hogar auténtico, sin imposiciones.</p>
+                </div>
+                <div class="image-content" data-reveal="right">
+                    <div class="placeholder-image landscape">
+                        <span>Paisaje con atardecer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ubicación Section -->
+    <section id="ubicacion" class="ubicacion">
+        <div class="container">
+            <h2>Ubicación estratégica</h2>
+            <div class="ubicacion-content">
+                <div class="ubicacion-info">
+                    <div class="info-item">
+                        <h3>Municipio</h3>
+                        <p>San Jerónimo, vereda Estancias (Antioquia)</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Altitud</h3>
+                        <p>1.000 m s.n.m.</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Accesos</h3>
+                        <ul>
+                            <li>Doble calzada desde parque de los Tamarindos → vía terciaria "Margaritas del 8" (≈10 min)</li>
+                            <li>Casco urbano de San Jerónimo (≈15 min desde el parque)</li>
+                        </ul>
+                    </div>
+                    <p class="nota">Conexión directa hacia Medellín y Urabá; privacidad sin perder cercanía a servicios.</p>
+                </div>
+                <div class="mapa-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.4431!2d-75.7281!3d6.4431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMjYnMzUuMSJOIDc1wrA0Myc0MS4xIlc!5e0!3m2!1ses!2sco!4v1234567890"
+                        width="100%" 
+                        height="400" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Ubicación de El Secreto de Estancias en San Jerónimo, Antioquia">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cercanías Section -->
+    <section class="cercanias">
+        <div class="container">
+            <h2>Todo cerca, sin renunciar a la calma</h2>
+            <div class="cercanias-content">
+                <div class="tiempos-grid">
+                    <div class="tiempo-item">
+                        <h3>Medellín</h3>
+                        <p>~1 h 10 min</p>
+                    </div>
+                    <div class="tiempo-item">
+                        <h3>Aeropuerto JMC</h3>
+                        <p>~1 h 30 min</p>
+                    </div>
+                    <div class="tiempo-item">
+                        <h3>San Jerónimo (centro)</h3>
+                        <p>~15 min</p>
+                    </div>
+                    <div class="tiempo-item">
+                        <h3>Santa Fe de Antioquia</h3>
+                        <p>~30 min</p>
+                    </div>
+                    <div class="tiempo-item">
+                        <h3>Supermercados</h3>
+                        <p>15–20 min</p>
+                    </div>
+                    <div class="tiempo-item">
+                        <h3>Hospital</h3>
+                        <p>~20 min</p>
+                    </div>
+                </div>
+                <div class="cercanias-image">
+                    <div class="placeholder-image">
+                        <span>Camino de ingreso</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Entorno Section -->
+    <section class="entorno">
+        <div class="container">
+            <h2>Un microclima envidiable</h2>
+            <div class="entorno-content">
+                <div class="text-content">
+                    <p>Cálido durante el día y fresco en la noche gracias a las brisas de Palmitas. Ideal para vivir cómodo y para el desarrollo de la vegetación nativa.</p>
+                    <div class="iconos-clima">
+                        <div class="icono-item">
+                            <div class="icono">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="5"/>
+                                    <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                                </svg>
+                            </div>
+                            <span>Sol</span>
+                        </div>
+                        <div class="icono-item">
+                            <div class="icono">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                            </div>
+                            <span>Vegetación</span>
+                        </div>
+                        <div class="icono-item">
+                            <div class="icono">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2 2 0 1 1 16 2H2"/>
+                                </svg>
+                            </div>
+                            <span>Brisas</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-content">
+                    <div class="placeholder-image">
+                        <span>Vegetación con cielo azul</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tipos de Lote Section -->
+    <section id="lotes" class="tipos-lote">
+        <div class="container">
+            <h2>Un lote para cada proyecto de vida</h2>
+            <div class="lotes-grid">
+                <div class="lote-card">
+                    <div class="lote-image">
+                        <div class="placeholder-image">
+                            <span>Terraza</span>
+                        </div>
+                    </div>
+                    <div class="lote-content">
+                        <h3>Terraza</h3>
+                        <p>Ideales para casas con piscina infinita y vistas amplias.</p>
+                    </div>
+                </div>
+                <div class="lote-card">
+                    <div class="lote-image">
+                        <div class="placeholder-image">
+                            <span>Ondulado</span>
+                        </div>
+                    </div>
+                    <div class="lote-content">
+                        <h3>Ondulado</h3>
+                        <p>Inmersos en vegetación y árboles nativos.</p>
+                    </div>
+                </div>
+                <div class="lote-card">
+                    <div class="lote-image">
+                        <div class="placeholder-image">
+                            <span>Playa</span>
+                        </div>
+                    </div>
+                    <div class="lote-content">
+                        <h3>Playa</h3>
+                        <p>100% planos, máximo aprovechamiento del área.</p>
+                    </div>
+                </div>
+            </div>
+            <p class="nota-lotes">15 lotes con áreas promedio de 2.600 m².</p>
+        </div>
+    </section>
+
+    <!-- Características Section -->
+    <section id="caracteristicas" class="caracteristicas">
+        <div class="container">
+            <h2>Listo para construir</h2>
+            <div class="caracteristicas-content">
+                <div class="lista-servicios">
+                    <div class="servicio-item">
+                        <div class="servicio-icono">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <div class="servicio-texto">
+                            <h3>2 derechos de agua</h3>
+                            <p>Riego y tratada</p>
+                        </div>
+                    </div>
+                    <div class="servicio-item">
+                        <div class="servicio-icono">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 12h18M3 6h18M3 18h18"/>
+                            </svg>
+                        </div>
+                        <div class="servicio-texto">
+                            <h3>Vías internas y explanación</h3>
+                            <p>Listas para construcción</p>
+                        </div>
+                    </div>
+                    <div class="servicio-item">
+                        <div class="servicio-icono">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <div class="servicio-texto">
+                            <h3>Grama macana incluida</h3>
+                            <p>Ahorro aproximado de $16 millones</p>
+                        </div>
+                    </div>
+                    <div class="servicio-item">
+                        <div class="servicio-icono">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5m-4 0h4"/>
+                            </svg>
+                        </div>
+                        <div class="servicio-texto">
+                            <h3>Servicio opcional</h3>
+                            <p>Diseño y construcción</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="caracteristicas-image">
+                    <div class="placeholder-image">
+                        <span>Lote engramado</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Libertad de Diseño Section -->
+    <section class="libertad-diseno">
+        <div class="container">
+            <h2>Sin P.H.: tu propiedad, tus reglas</h2>
+            <div class="libertad-content">
+                <div class="text-content">
+                    <p>Sin manuales restrictivos ni cuotas de administración. Diseña a tu gusto, crea tu huerta, ten caballos y mascotas. Aquí la libertad se vive con responsabilidad y respeto por la naturaleza.</p>
+                </div>
+                <div class="image-content">
+                    <div class="placeholder-image">
+                        <span>Vida campestre</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mirador Section -->
+    <section class="mirador">
+        <div class="container">
+            <h2>Amaneceres y atardeceres de postal</h2>
+            <div class="mirador-content">
+                <p>Una meseta con mirador hacia la doble calzada, parque de los Tamarindos, Santa Fe, San Jerónimo y el río Cauca.</p>
+                <div class="mirador-image">
+                    <div class="placeholder-image landscape">
+                        <span>Panorámica desde el punto más alto</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integración Naturaleza Section -->
+    <section class="integracion-naturaleza">
+        <div class="container">
+            <h2>Corredores de vida</h2>
+            <div class="integracion-content">
+                <p>Sistema de siembra entre lotes y corredores funcionales para atraer fauna y flora. Selección de árboles y arbustos nativos que conectan la parcelación con los bosques circundantes.</p>
+                <div class="mosaico-fotos">
+                    <div class="placeholder-image small">
+                        <span>Flores nativas</span>
+                    </div>
+                    <div class="placeholder-image small">
+                        <span>Aves</span>
+                    </div>
+                    <div class="placeholder-image small">
+                        <span>Árboles</span>
+                    </div>
+                    <div class="placeholder-image small">
+                        <span>Bosque</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inspiración Arquitectónica Section -->
+    <section class="inspiracion-arquitectonica">
+        <div class="container">
+            <h2>Diseña la casa que imaginas</h2>
+            <div class="inspiracion-content">
+                <div class="text-content">
+                    <p>Terrazas, vistas abiertas, piscinas infinitas y materiales nobles que dialogan con el entorno. Nuestro equipo aliado puede guiarte en diseño y construcción.</p>
+                </div>
+                <div class="image-content">
+                    <div class="placeholder-image">
+                        <span>Casa tipo mirador con piscina</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería Section -->
+    <section id="galeria" class="galeria">
+        <div class="container">
+            <h2>Naturaleza que inspira</h2>
+            <div class="galeria-grid">
+                <div class="galeria-item" onclick="openLightbox(0)">
+                    <div class="placeholder-image">
+                        <span>Montañas</span>
+                    </div>
+                </div>
+                <div class="galeria-item" onclick="openLightbox(1)">
+                    <div class="placeholder-image">
+                        <span>Quebradas</span>
+                    </div>
+                </div>
+                <div class="galeria-item" onclick="openLightbox(2)">
+                    <div class="placeholder-image">
+                        <span>Rocas</span>
+                    </div>
+                </div>
+                <div class="galeria-item" onclick="openLightbox(3)">
+                    <div class="placeholder-image">
+                        <span>Árboles</span>
+                    </div>
+                </div>
+                <div class="galeria-item" onclick="openLightbox(4)">
+                    <div class="placeholder-image">
+                        <span>Senderos</span>
+                    </div>
+                </div>
+                <div class="galeria-item" onclick="openLightbox(5)">
+                    <div class="placeholder-image">
+                        <span>Vistas</span>
+                    </div>
+                </div>
+                <div class="galeria-item" onclick="openLightbox(6)">
+                    <div class="placeholder-image">
+                        <span>Atardecer</span>
+                    </div>
+                </div>
+                <div class="galeria-item" onclick="openLightbox(7)">
+                    <div class="placeholder-image">
+                        <span>Paisaje</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2>Preguntas Frecuentes</h2>
+            <div class="faq-content">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>¿Cuántos lotes y de qué tamaño?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>15 lotes; áreas promedio 2.600 m²; topografías: terraza, ondulado y playa.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>¿Qué incluye la entrega?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>2 derechos de agua (riego y tratada), vías internas y explanación, grama macana.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>¿Puedo construir con mi propio arquitecto?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sí. El proyecto es abierto (sin P.H.). También ofrecemos servicios opcionales de diseño y construcción.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>¿Hay administración o cuotas?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No. Al ser sin P.H., no hay administración ni cuotas extras.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>¿Cómo se llega?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Doble calzada → "Margaritas del 8" (~10 min) o por el casco urbano (~15 min).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto Section -->
+    <section id="contacto" class="contacto">
+        <div class="container">
+            <h2>Agenda tu visita y conoce tu próximo refugio</h2>
+            <div class="contacto-content">
+                <div class="formulario-container">
+                    <form id="contactForm" class="contacto-form">
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo *</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono *</label>
+                            <input type="tel" id="telefono" name="telefono" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo electrónico *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="fecha">¿Cuándo deseas visitar?</label>
+                            <input type="date" id="fecha" name="fecha">
+                        </div>
+                        <!-- ... existing code ... -->
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+                        </div>
+                        <!-- Campo oculto para la fecha de envío -->
+                        <input type="hidden" name="sent_date" value="">
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    <!-- ... existing code ... -->
+                    </form>
+                </div>
+                <div class="contacto-info">
+                    <div class="info-contacto">
+                        <h3>Información de contacto</h3>
+                        <div class="contacto-item">
+                            <span class="icono">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                            </span>
+                            <a href="tel:+573137848155">+57 313 784 8155</a>
+                        </div>
+                        <div class="contacto-item">
+                            <span class="icono">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                            </span>
+                            <a href="mailto:ventas@elsecretodeestancias.com">ventas@elsecretodeestancias.com</a>
+                        </div>
+                        <div class="contacto-item">
+                            <span class="icono">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                            </span>
+                            <span>San Jerónimo, Antioquia – Vereda Estancias</span>
+                        </div>
+                    </div>
+                    <div class="contacto-acciones">
+                        <a href="https://wa.me/573137848155" class="btn btn-whatsapp" target="_blank">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                            </svg>
+                            WhatsApp
+                        </a>
+                        <a href="https://maps.google.com/?q=San+Jerónimo+Antioquia+Vereda+Estancias" class="btn btn-maps" target="_blank">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            Ver en Google Maps
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>El Secreto de Estancias</h3>
+                    <p>Vive la naturaleza con libertad y confort</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Aviso de privacidad</a>
+                    <a href="#">Términos y condiciones</a>
+                    <a href="#">Política de datos</a>
+                </div>
+                <div class="footer-copy">
+                    <p>&copy; El Secreto de Estancias. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/573137848155" class="whatsapp-float" target="_blank">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+        </svg>
+    </a>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <div class="lightbox-content">
+            <span class="lightbox-close">&times;</span>
+            <img id="lightbox-img" src="" alt="">
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toast" class="toast">
+        <div class="toast-content">
+            <span class="toast-message">¡Mensaje enviado con éxito! Te contactaremos pronto.</span>
+        </div>
+    </div>
+
+
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
+    <!-- JavaScript -->
+    <script src="config.js"></script>
+    <script src="chat-config.js"></script>
+    <script src="calendar-config.js"></script>
+    <script src="blog-config.js"></script>
+    <script src="reservations-config.js"></script>
+    <script src="i18n-config.js"></script>
+    <script src="crm-config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
